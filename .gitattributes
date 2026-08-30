@@ -1,0 +1,3 @@
+bin/moedu-agent text eol=lf
+skills/moedu-business-data/scripts/moedu-agent text eol=lf
+skills/moedu-business-data/scripts/moedu-data text eol=lf
