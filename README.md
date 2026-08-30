@@ -49,7 +49,7 @@ moedu-agent auth login --username YOUR_USERNAME
 
 ## 智能体接入
 
-完整 Skill 位于 [skills/moedu-business-data](skills/moedu-business-data)。对于支持目录式 Skill 的工具，可安装或链接该目录；对于其他能够执行本地命令的智能体，按 `SKILL.md` 的安全顺序调用 `moedu-agent` 即可。
+完整 Skill 位于 [skills/moedu-business-data](skills/moedu-business-data)。该目录已经内置无第三方依赖的只读 CLI，可单独复制或由桌面安装包直接捆绑；对于其他能够执行本地命令的智能体，按 `SKILL.md` 的安全顺序调用 `scripts/moedu-data` 即可。
 
 建议流程：
 

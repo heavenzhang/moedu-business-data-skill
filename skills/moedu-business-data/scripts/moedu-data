@@ -6,6 +6,8 @@ skill_root=$(CDPATH= cd -- "$script_dir/.." && pwd -P)
 
 if [ -n "${MOEDU_AGENT_CLI:-}" ]; then
   cli=$MOEDU_AGENT_CLI
+elif [ -x "$skill_root/scripts/moedu-agent" ]; then
+  cli="$skill_root/scripts/moedu-agent"
 elif [ -x "$skill_root/../../bin/moedu-agent" ]; then
   cli="$skill_root/../../bin/moedu-agent"
 elif command -v moedu-agent >/dev/null 2>&1; then
