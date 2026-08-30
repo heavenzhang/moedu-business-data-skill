@@ -46,32 +46,32 @@ def _jxc(
 RESOURCE_LIST = (
     Resource(
         "crm.customers", "crm", "客户", "crmCustomer/queryPageList",
-        primary_key="customerId", detail_path="crmCustomer/queryById/{id}",
+        primary_key="customerId",
         filter_hints=("search", "ownerUserId", "sceneId", "createTime"),
     ),
     Resource(
         "crm.leads", "crm", "线索", "crmLeads/queryPageList",
-        primary_key="leadsId", detail_path="crmLeads/queryById/{id}",
+        primary_key="leadsId",
         filter_hints=("search", "ownerUserId", "sceneId", "createTime"),
     ),
     Resource(
         "crm.opportunities", "crm", "商机", "crmBusiness/queryPageList",
-        primary_key="businessId", detail_path="crmBusiness/queryById/{id}",
+        primary_key="businessId",
         filter_hints=("search", "ownerUserId", "statusId", "customerId", "createTime"),
     ),
     Resource(
         "crm.contracts", "crm", "合同", "crmContract/queryPageList",
-        primary_key="contractId", detail_path="crmContract/queryById/{id}",
+        primary_key="contractId",
         filter_hints=("search", "ownerUserId", "customerId", "businessId", "createTime"),
     ),
     Resource(
         "crm.receivables", "crm", "回款", "crmReceivables/queryPageList",
-        primary_key="receivablesId", detail_path="crmReceivables/queryById/{id}",
+        primary_key="receivablesId",
         filter_hints=("search", "ownerUserId", "customerId", "contractId", "returnTime"),
     ),
     Resource(
         "crm.invoices", "crm", "发票", "crmInvoice/queryPageList",
-        primary_key="invoiceId", detail_path="crmInvoice/queryById/{id}",
+        primary_key="invoiceId",
         filter_hints=("search", "ownerUserId", "customerId", "contractId", "invoiceStatus"),
     ),
     _jxc("jxc.products", "产品", 1, "productId", "jxcProduct"),

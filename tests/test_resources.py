@@ -35,6 +35,11 @@ class ResourceRegistryTests(unittest.TestCase):
         self.assertIn("reviewStatus", resource.filter_hints)
         self.assertEqual(resource.list_path, "oaFeedback/admin/page")
         self.assertEqual(resource.detail_path, "oaFeedback/detail/{id}")
+
+    def test_crm_detail_routes_stay_disabled_until_server_authorization_is_uniform(self):
+        crm_resources = [resource for resource in RESOURCE_LIST if resource.domain == "crm"]
+        self.assertTrue(crm_resources)
+        self.assertTrue(all(resource.detail_path is None for resource in crm_resources))
         self.assertTrue(resource.public_dict()["read_only"])
 
 
