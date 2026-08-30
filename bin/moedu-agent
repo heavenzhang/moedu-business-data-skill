@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+package_root=$(CDPATH= cd -- "$script_dir/.." && pwd)
+PYTHONPATH="$package_root${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m moedu_agent_cli "$@"

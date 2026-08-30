@@ -1,0 +1,4 @@
+interface:
+  display_name: "Moedu 经营数据"
+  short_description: "安全查询并分析 CRM、进销存、HRM 与目标绩效数据"
+  default_prompt: "Use $moedu-business-data to query and analyze relevant Moedu platform business data with clear source and permission boundaries."

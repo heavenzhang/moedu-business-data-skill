@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+skill_root=$(CDPATH= cd -- "$script_dir/.." && pwd -P)
+
+if [ -n "${MOEDU_AGENT_CLI:-}" ]; then
+  cli=$MOEDU_AGENT_CLI
+elif [ -x "$skill_root/../../bin/moedu-agent" ]; then
+  cli="$skill_root/../../bin/moedu-agent"
+elif command -v moedu-agent >/dev/null 2>&1; then
+  cli=$(command -v moedu-agent)
+else
+  echo '{"ok":false,"error":{"type":"configuration_error","message":"moedu-agent CLI not found; set MOEDU_AGENT_CLI or install the adjacent agent-cli package"}}' >&2
+  exit 2
+fi
+
+export MOEDU_AGENT_ID="${MOEDU_AGENT_ID:-moedu-business-data}"
+exec "$cli" "$@"

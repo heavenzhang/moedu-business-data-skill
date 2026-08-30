@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moedu-agent-cli"
+version = "0.3.0"
+description = "Read-only Moedu business data CLI and reusable agent Skill"
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/heavenzhang/moedu-business-data-skill"
+Repository = "https://github.com/heavenzhang/moedu-business-data-skill"
+
+[project.scripts]
+moedu-agent = "moedu_agent_cli.cli:main"
+
+[tool.setuptools]
+packages = ["moedu_agent_cli"]
